@@ -1,0 +1,4 @@
+admin:admin
+51351921:aaaa
+Acosta:1234
+bruno:bruno

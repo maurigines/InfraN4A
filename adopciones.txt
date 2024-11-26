@@ -1,0 +1,22 @@
+24:Perro:Colita:m:2:Gatiotto:01/01/2000
+Adoptado por mateo el 25/11/2024
+26:Perro:Colita:m:2:Gatiotto:01/01/2000
+Adoptado por mateo el 25/11/2024
+27:Perro:Colita:m:2:Gatiotto:01/01/2000
+Adoptado por mateo el 25/10/2024
+28:Perro:Colita:m:2:Gatiotto:01/02/2000
+Adoptado por mateo el 25/10/2024
+29:Perro:Colita:m:2:Gatiotto:01/02/2000
+Adoptado por mateo el 25/09/2024
+30:Tigre:Colita:m:2:Gatiotto:01/01/2000
+Adoptado por mateo el 25/09/2024
+31:Tigre:Colita:m:2:Gatiotto:01/01/2000
+Adoptado por mateo el 25/11/2024
+32:Tigre:Colita:m:2:Gatiotto:01/01/2000
+Adoptado por mateo el 25/08/2024
+33:Colibri:Colita:m:2:Gatiotto:01/01/2000
+Adoptado por mateo el 25/08/2024
+34:Tigre:Colita:m:2:Gatiotto:01/01/2000
+Adoptado por mateo el 25/08/2024
+35:Gato:Colita:m:2:Gatiotto:01/01/2000
+Adoptado por mateo el 25/08/2024
