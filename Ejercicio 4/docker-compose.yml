@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  vscode-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Mapeo del puerto para acceso 
+    volumes:
+      - ./data:/home/developer/project # Volumen de persistencia de proyectos
+    environment:
+      - PASSWORD=your_password # Contraseña de acceso
+    restart: unless-stopped # Reinicia el servicio automáticamente si falla
