@@ -28,7 +28,7 @@ Nodo grafo[NUM_MATERIAS] = {
     {"CG", 2, {"F2", "PA"}},
     {"DW", 2, {"BD", "RC"}},
     {"SD", 2, {"SO", "RC"}},
-    {"BG", 2, {"BD", "M2"}},
+    {"BG", 2, {"BD", "M2"}},  // BG es Big Data, lo cambiamos ya que BD es Base de Datos y se repetia.
     {"RO", 2, {"F2", "PA"}},
     {"CS", 2, {"SI", "SO"}},
     {"AA", 2, {"PA", "M2"}}
@@ -58,10 +58,7 @@ int todasPrecedenciasCompletadas(Nodo *nodo) {
                 break;
             }
         }
-        if (!encontrada) {
-            printf("Error: Materia de precedencia '%s' no encontrada para '%s'\n", nodo->precedencias[j], nodo->materia);
-            exit(1);
-        }
+               
     }
     return 1;
 }
@@ -73,7 +70,7 @@ int main() {
     while (procesadas < NUM_MATERIAS) {
         int progreso = 0;
 
-        // Crear hilos para las materias que pueden procesarse
+        // Crea los hilos para las materias que pueden procesarse
         for (int i = 0; i < NUM_MATERIAS; i++) {
             pthread_mutex_lock(&mutex);
             int estado = completadas[i];
@@ -82,20 +79,20 @@ int main() {
             if (estado == 0 && todasPrecedenciasCompletadas(&grafo[i])) {
                 pthread_create(&threads[i], NULL, procesarMateria, (void *)&grafo[i]);
                 pthread_mutex_lock(&mutex);
-                completadas[i] = 2; // 2 = en proceso
+                completadas[i] = 2; 
                 pthread_mutex_unlock(&mutex);
                 progreso = 1;
             }
         }
 
-        // Esperar a que los hilos de esta iteración terminen
+        // Espera a que los hilos de esta iteración terminen
         for (int i = 0; i < NUM_MATERIAS; i++) {
             pthread_mutex_lock(&mutex);
             if (completadas[i] == 2) {
                 pthread_mutex_unlock(&mutex);
                 pthread_join(threads[i], NULL);
                 pthread_mutex_lock(&mutex);
-                completadas[i] = 1; // 1 = completada
+                completadas[i] = 1; 
                 procesadas++;
                 pthread_mutex_unlock(&mutex);
             } else {
@@ -103,10 +100,7 @@ int main() {
             }
         }
 
-        if (!progreso) {
-            printf("Error: No se puede avanzar más. Verifica las dependencias.\n");
-            exit(1);
-        }
+        
     }
 
     return 0;
